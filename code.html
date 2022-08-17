@@ -55,16 +55,37 @@
             <div class="col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-javascript">
-                        function HelloWorld() {
-                            alert("Hello World");
-                        }
+                        //Get the String input
+//Controller function
+function getValues() {
+    document.getElementById("alert").classList.add("invisible");
+    let userString = document.getElementById("userString").value;
+    let revString = reverseString(userString);
+    displayReverse(revString);
+}
+//Reverse the String
+//Logic Function
+function reverseString(userString) {
+    let revString = [];
+
+    for (let i = userString.length - 1; i >=0; i--) {
+        revString += userString[i];
+    }
+    return revString;
+}
+//Display the message
+//View Function
+function displayReverse(revString) {
+    document.getElementById("msg").innerHTML = `You String reversed is: ${revString}`;
+    document.getElementById("alert").classList.remove("invisible");
+}
                     </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structed in one Function.</p>
-                <h5>Hello World.</h5>
-                <p>Hello World is a Function that displays an Alert that contains the message "Hello Wolrd."</p>
+                <p>This an app that reverse strings.</p>
+                <h5>Rewind.</h5>
+                <p>The first function grabs the value of the string from the form input. The second sets the variables to reverse using a for loop that starts at the end of the string by taking the length and counting backwards. The final function displays the end result.</p>
             </div>
         </div>
     </div>
